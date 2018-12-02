@@ -1,0 +1,6 @@
+*.synctex.gz
+.ipynb_checkpoints
+
+asg*.aux
+asg*.log
+asg*.out
