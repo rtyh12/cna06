@@ -1,4 +1,4 @@
-\documentclass {article}
+\documentclass{article}
 \usepackage{amsmath}
 \setlength{\parindent}{0cm}
 
@@ -19,84 +19,8 @@
 
 \begin{document}
 
+\include{tex/problem1}
+\include{tex/problem2}
+\include{tex/problem3}
 
-
-% problem 1
-\section{Degree Correlation Coefficient}
-For all the computations, please see \texttt{Problem 6-1.ipynb}
-\subsection{Degree Correlation Matrix}
-\[
- 	E = 
- 	\begin{bmatrix}
- 	0     &  0   & 1/8 \\
- 	0     & 1/4 & 1/4 \\
-  	1/8  & 1/4 & 0
- 	\end{bmatrix}
-\]
-
-\subsection{Probabilities $q_k$}
-\[{
-\begin{array}{cccccccc}
-q_1 &=& 0&+&0&+&1/8 =&1/8 \\
-q_2 &=& 0&+&1/4&+&1/4 =&1/2 \\
-q_3 &=& 1/8&+&1/4&+&0 =&3/8 
-\end{array}
-}\]
-\subsection{Degree Correlation Coefficient}
-$r = -0.7142857142857143$\\
-
-Based on r, the given network is disassortative ($r < 0$)
-\newpage
-
-
-
-%problem 2
-\section{Degree Correlations in Random Graphs}
-\subsection{}
-$$ p(a_{ij} = 1) = \frac{ L }{ \frac{ N(N-1) }{ 2 } } = \frac{ 2L }{ N(N-1) } $$
-
-\subsection{}
-If link $ a_{xy} $ exists, then $ p(a_{ij}) (i,j \neq x,y) $ goes down, since we know that one link is already present and the final number of links is fixed. Similarly, if the link doesn't exist, the probability of all other links goes up.
-
-\begin{align*}	
-	p(a_{ij} = 1 | a_{xy} = 1) &= \frac{ L-1 }{ \frac{ N(N-1) }{ 2 } - 1 } \\
-	&= 2 \frac{ L-1 }{ N(N-1) - 2 } \\
-	&= \frac{ 2L-2 }{ N^2-N-2 }
-\end{align*}
-
-\begin{align*}	
-	p(a_{ij} = 1 | a_{xy} = 0) &= \frac{ L }{ \frac{ N(N-1) }{ 2 } - 1 } \\
-	&= 2 \frac{ L }{ N(N-1) - 2 } \\
-	&= \frac{ 2L }{ N^2-N-2 }
-\end{align*}
-
-\subsection{}
-\begin{align*}
-	\frac{P \left( a_{ij} = 1 | a_{xy} = 1 \right)}{P \left( a_{ij}=0 \right)} &=\frac{L-1}{\frac{N(N-1)}{2}-1} \cdot \frac{\frac{N(N-1)}{2}}{L}\\
-	&=\frac{L-1}{\frac{N(N-1)-2}{2}} \cdot \frac{N(N-1)}{2L}\\
-	&= \frac{N(L-1)(N-1)}{\frac{2LN(N-1)-2}{2}}\\
-	&= \frac{N(L-1)(N-1)}{LN(N-1)-2}\\
-	&&\lim\limits_{N \to \infty}  \frac{N(L-1)(N-1)}{LN(N-1)-2} = \frac{L-1}{L}
-\end{align*}
-
-\begin{align*}
-	\frac{P \left( a_{ij} = 1 | a_{xy} = 0 \right)}{P \left( a_{ij}=0 \right)} &=\frac{L}{\frac{N(N-1)}{2}-1} \cdot \frac{\frac{N(N-1)}{2}}{L}\\
-	&= \frac{2}{N(N-1)-2} \cdot \frac{N(N-1)}{2}\\
-	&= \frac{N(N-1)}{N(N-1)-2}\\
-	&&\lim\limits_{N \to \infty} \frac{N(N-1)}{N(N-1)-2} = 1
-\end{align*}
-
-\subsection{}
-For $G(N,p)$ model, $r_0' = r_1' = 1$, in other words, the conditional probabilities don't change and are always the same as $p(a_{ij} = 1)$. This is the because the probability p that an edge exists in the $G(N,p)$ model is fixed, unlike in the $G(N,L)$ model.
-
-\subsection{}
-
-
-\newpage
-
-
-
-
-%problem 3
-\section{Degree Correlations and Assortativity}
 \end{document}
